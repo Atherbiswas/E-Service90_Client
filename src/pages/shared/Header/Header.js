@@ -8,6 +8,15 @@ const Header = () => {
     <li>
         <Link to='/'>Home</Link>
     </li>
+    {/* {
+        user?.email? <>
+        <li><Link to="/myReviews">My reviews</Link></li>
+        <li><Link to="/addService">Add service</Link></li>
+        <li><Link to="/logout">Logout</Link></li>
+        </>
+        :
+        <li><Link to="/logout">Logout</Link></li>
+    } */}
     <li>
         <Link to="/blog">Blog</Link>
     </li>
@@ -18,7 +27,7 @@ const Header = () => {
     </>
 
     return (
-        <div className="navbar bg-indigo-800 font-semibold sticky top-0 z-50">
+        <div className="navbar bg-indigo-600 font-semibold sticky top-0 z-50">
                 <div className="navbar-start">
                     <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -39,9 +48,6 @@ const Header = () => {
                     <ul className="menu menu-horizontal p-0">
                     {navbarItems}
                     </ul>
-                </div>
-                <div className="navbar-end">
-                    <Link className="btn">Get started</Link>
                 </div>
         </div>
     );

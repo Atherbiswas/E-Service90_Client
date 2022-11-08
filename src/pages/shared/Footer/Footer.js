@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import footerLogo from '../../../site-logo.png'
+import footerLogo from '../../../site-logo.png';
+
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-indigo-800 text-primary-content mt-9">
+        <footer className="footer footer-center p-10 bg-indigo-600 text-primary-content mt-9">
             <div>
                 <img src={footerLogo} className='w-2/12' alt="" />
                 <p className="font-bold">
-                E-Service90<br/>Providing Services since 2010
+                <span className='text-2xl'>E-Service90</span><br/>Providing Services since 2010
                 </p> 
                 <p>Mobile: +8801785-675598</p>
                 <p>Copyright © 2022 - All right reserved</p>
