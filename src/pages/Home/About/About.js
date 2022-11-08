@@ -9,6 +9,7 @@ const About = () => {
                 <img src={authorImg} className="w-4/5 h-full rounded-lg shadow-2xl" alt=''/>
                 </div>
                 <div className='w-1/2 text-white'>
+                <h1 className='font-semibold mb-7'>About Me:</h1>
                 <h1 className="text-4xl font-bold">Jack Connor</h1>
                 <p className="py-6">Online Specialist & Trainer</p>
                 <button className="btn btn-outline btn-secondary">More Info</button>
