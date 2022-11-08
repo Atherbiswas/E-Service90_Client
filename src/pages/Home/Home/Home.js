@@ -12,7 +12,6 @@ const Home = () => {
       <About></About>
       <h1 className="text-white text-center mt-7 text-4xl font-bold">Features</h1>
       <Features></Features>
-      <Footer></Footer>
     </div>
   );
 };

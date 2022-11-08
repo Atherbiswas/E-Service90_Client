@@ -5,7 +5,7 @@ import { BsClock } from "react-icons/bs";
 
 const Features = () => {
     return (
-        <div className="grid grid-cols-4 border border-indigo-400 gap-4 mt-10 p-5">
+        <div className="grid grid-cols-4 border border-indigo-400 gap-4 mt-8 p-5">
             <div className='text-white mx-auto'>
                 <FaUserFriends className='text-7xl mx-4'></FaUserFriends>
                 <div className='text-xl font-semibold text-center'>
