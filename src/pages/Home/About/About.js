@@ -1,17 +1,20 @@
 import React from 'react';
+import authorImg from '../../../assets/images/Author pic.jpg'
 
 const About = () => {
     return (
-        <div className="hero bg-base-200 mt-9">
-  <div className="hero-content flex-col lg:flex-row">
-    <img src="https://ibb.co/HhP2d3S" className="max-w-sm rounded-lg shadow-2xl" alt='' />
-    <div>
-      <h1 className="text-5xl font-bold">Box Office News!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-primary">Get Started</button>
-    </div>
-  </div>
-</div>
+        <div className="hero mt-6 border-l-[8px] border-indigo-500">
+            <div className="hero-content flex-col justify-around lg:flex-row">
+                <div className='w-1/2'>
+                <img src={authorImg} className="w-4/5 h-full rounded-lg shadow-2xl" alt=''/>
+                </div>
+                <div className='w-1/2 text-white'>
+                <h1 className="text-4xl font-bold">Jack Connor</h1>
+                <p className="py-6">Online Specialist & Trainer</p>
+                <button className="btn btn-outline btn-secondary">More Info</button>
+                </div>
+            </div>
+        </div>
     );
 };
 
