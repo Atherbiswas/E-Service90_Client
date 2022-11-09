@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { FaCommentsDollar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import logo from '../../../site-logo.png'
@@ -20,19 +19,18 @@ const Header = () => {
     <li>
         <Link to='/'>Home</Link>
     </li>
+    <li><Link to="/services">Services</Link></li>
+        <li><Link to="/blog">Blog</Link></li>
+        <li><Link to="/about">About</Link></li>
     {
         user?.uid? <>
         <li><Link to="/myReviews">My reviews</Link></li>
         <li><Link to="/addService">Add service</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
-        <li><Link to="/about">About</Link></li>
         <li><Link onClick={handleLogout} to="/">Logout</Link></li>
         <span className='mt-3 font-bold text-rose-500'>{user?.displayName}</span>
         </>
         :
         <>
-        <li><Link to="/blog">Blog</Link></li>
-        <li><Link to="/about">About</Link></li>
         <li><Link to="/login">Login</Link></li>
         <li><Link to="/signup">SignUp</Link></li>
         </>
