@@ -43,6 +43,7 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             toast.success('You have successfully login with google account');
+            navigate(from , {replace: true})
         })
         .catch(error => console.error(error))
     }
