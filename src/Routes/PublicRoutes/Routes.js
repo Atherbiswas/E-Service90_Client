@@ -11,8 +11,6 @@ import ServiceDetails from "../../pages/ServiceDetails/ServiceDetails";
 import AllServices from "../../pages/Services/AllServices";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
-
-
 export const routes = createBrowserRouter([
   {
     path: "/",
@@ -20,43 +18,52 @@ export const routes = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
         path: "/blog",
-        element: <Blog></Blog>
+        element: <Blog></Blog>,
       },
       {
         path: "/about",
-        element: <About></About>
+        element: <About></About>,
       },
       {
-        path: '/login',
-        element: <Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path: '/signup',
-        element: <Register></Register>
+        path: "/signup",
+        element: <Register></Register>,
       },
       {
-        path: '/allServices',
-        element: <AllServices></AllServices>
+        path: "/allServices",
+        element: <AllServices></AllServices>,
       },
       {
-        path: '/services/:id',
-        loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
-        element: <ServiceDetails></ServiceDetails>
+        path: "/services/:id",
+        loader: ({ params }) =>
+          fetch(
+            `https://clinimedicare-server.vercel.app/services/${params.id}`
+          ),
+        element: <ServiceDetails></ServiceDetails>,
       },
       {
-        path: '/checkout/:id',
-        loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
-        element: <PrivateRoutes><Review></Review></PrivateRoutes>
+        path: "/checkout/:id",
+        loader: ({ params }) =>
+          fetch(
+            `https://clinimedicare-server.vercel.app/services/${params.id}`
+          ),
+        element: (
+          <PrivateRoutes>
+            <Review></Review>
+          </PrivateRoutes>
+        ),
       },
       {
-        path: '/reviews',
-        element: <MyReview></MyReview>
-      }
-      
+        path: "/reviews",
+        element: <MyReview></MyReview>,
+      },
     ],
   },
 ]);
