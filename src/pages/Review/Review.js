@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Review = () => {
@@ -10,17 +11,20 @@ const Review = () => {
     const handlePlaceReview = (event) => {
         event.preventDefault();
         const form = event.target;
-        const FirstName = `${form.name.value}`;
-        const phone = form.phone.value;
+        const FirstName = `${form.FirstName.value}`;
+        const rating = form.rating.value;
         const email = user?.email || 'unregistered';
         const Creview = form.review.value;
+        const photoUrl = form.photo.value;
 
         const review = {
             service: _id,
             serviceName: title,
             Creview,
             email,
-            customer: FirstName
+            customer: FirstName,
+            image: photoUrl,
+            rating: rating
 
         }
 
@@ -32,7 +36,13 @@ const Review = () => {
             body: JSON.stringify(review)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data);
+            if(data.acknowledged){
+                toast.success('Checkout and give Review successful')
+                form.reset();
+            }
+        })
         .catch(error => console.error(error))
 
     }
@@ -49,12 +59,14 @@ const Review = () => {
 
                 <input name="FirstName" type="text" placeholder="First Name" className="input input-bordered w-full" required/>
 
-                <input name="phone" type="text" placeholder="Phone" className="input input-bordered w-full" />
+                <input name="rating" type="text" placeholder="Rating" className="input input-bordered w-full" required/>
 
                 <input name="email" type="text" placeholder="Email" className="input input-bordered w-full" defaultValue={user?.email} readOnly/>
+                <input name="photo" type="text" placeholder="photoUrl" className="input input-bordered w-full" required/>
                 </div>
                 <textarea name="review" className="textarea h-32 w-full textarea-primary mt-5" placeholder="Please review about this service" required></textarea>
                 <input type="submit" className='btn btn-outline btn-secondary' value="Done" />
+                <Link to="/allServices" className='btn btn-outline btn-secondary mx-2'>Back to services</Link>
             </form>
         </div>
     );
