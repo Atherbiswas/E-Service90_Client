@@ -23,7 +23,7 @@ const Header = () => {
         <li><Link to="/about">About</Link></li>
     {
         user?.uid? <>
-        <li><Link to="/myReviews">My reviews</Link></li>
+        <li><Link to="/reviews">My reviews</Link></li>
         <li><Link to="/addService">Add service</Link></li>
         <li><Link onClick={handleLogout} to="/">Logout</Link></li>
         <span className='mt-3 font-bold text-rose-500'>{user?.displayName}</span>

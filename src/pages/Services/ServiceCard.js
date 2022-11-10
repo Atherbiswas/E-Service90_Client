@@ -14,7 +14,7 @@ const ServiceCard = ({service}) => {
                 {
                   details.length > 100 ? 
                   <>
-                  {details.slice(0, 100) + '...'} <button className='btn btn-outline btn-primary btn-sm'><Link to={`/myReviews/${_id}`}><span>Show details</span></Link></button>
+                  {details.slice(0, 100) + '...'} <button className='btn btn-outline btn-primary btn-sm'><Link to={`/services/${_id}`}><span>Show details</span></Link></button>
                   </>
                   : details
                 }
@@ -23,7 +23,7 @@ const ServiceCard = ({service}) => {
                 <p><span className='font-bold'>Rating: </span>{rating}</p>
               <div className="card-actions justify-end">
                 <button className="btn btn-primary">
-                   <Link to={`/services/${_id}`}>Check Out</Link>
+                   <Link to={`/checkout/${_id}`}>Check Out</Link>
                 <FaArrowRight className='mx-2'></FaArrowRight>
                 </button>
               </div>

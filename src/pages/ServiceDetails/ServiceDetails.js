@@ -15,7 +15,7 @@ const ServiceDetails = () => {
                 <p><span className='font-bold'>Rating: </span>{rating}</p>
               <div className="card-actions justify-end">
                 <button className="btn btn-primary">
-                   <Link to={`/myReviews/${_id}`}>Check Out</Link>
+                   <Link to={`/checkout/${_id}`}>Check Out</Link>
                 <FaArrowRight className='mx-2'></FaArrowRight>
                 </button>
               </div>
