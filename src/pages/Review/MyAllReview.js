@@ -1,22 +1,8 @@
 import React from 'react';
-import toast from 'react-hot-toast';
 
-const MyAllReview = ({review}) => {
+const MyAllReview = ({review, handleDelete}) => {
     const {_id, serviceName,email,rating,Creview} = review;
 
-    const handleDelete = id => {
-        const proceed = window.confirm('Are you sure to delete this review')
-        if(proceed){
-            fetch(`http://localhost:5000/reviews/${id}`, {
-                method: 'DELETE'
-            })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            })
-        }
-
-    }
     return (
         <tr>
             <th>
