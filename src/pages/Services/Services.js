@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ServiceCard from './ServiceCard';
 import { FaArrowRight } from 'react-icons/fa';
+import Service from './Service';
 
 const Services = () => {
     const [services, setServices] = useState([]);
@@ -18,11 +18,10 @@ const Services = () => {
             </div>
             <div className='grid gap-4 grid-cols-1 lg:grid-cols-3'>
                 {
-                    services.map(service => <ServiceCard
-                    
-                    key={service._id}
-                    service={service}
-                    ></ServiceCard> )
+                    services.map(service => <Service
+                        key={service._id}
+                        service={service}
+                    ></Service>)
                 }
             </div>
             <div className='text-center mt-4'>
