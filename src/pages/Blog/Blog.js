@@ -6,7 +6,7 @@ import logo4 from '../../assets/images/nodejs.png';
 
 const Blog = () => {
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-1 gap-4 w-full '>
+        <div className='grid grid-cols-1 lg:grid-cols-1 gap-6 w-full '>
             <div className="card w-3/4 bg-base-100 shadow-xl mx-auto">
             <figure><img src={logo1} alt="Shoes" /></figure>
             <div className="card-body">
