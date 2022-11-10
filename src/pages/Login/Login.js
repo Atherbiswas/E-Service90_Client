@@ -5,10 +5,12 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import toast from 'react-hot-toast';
+import useTitle from '../../Hooks/UseTitle';
 
 
 const Login = () => {
     const {providerLogIn, loginUser} = useContext(AuthContext);
+    useTitle('E-Service90/Login')
 
     const navigate = useNavigate();
     const location = useLocation();

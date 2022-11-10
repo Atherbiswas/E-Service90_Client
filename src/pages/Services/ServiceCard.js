@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 
 const ServiceCard = ({service}) => {
   const {_id, title, image, details, price, rating} = service;
-  const [serviceReview, setServiceReview] = useState([]);
-  const detailsHenal=(_id)=>{
-      fetch(`http://localhost:5000/servicesRevew/${_id}`)
-        .then(res => res.json())
-        .then(data => setServiceReview(data))
+  // const [serviceReview, setServiceReview] = useState([]);
+  // const detailsHandel=(_id)=>{
+  //     fetch(`http://localhost:5000/servicesReview/${_id}`)
+  //       .then(res => res.json())
+  //       .then(data => setServiceReview(data))
       
-  }
+  // }
     return (
-        <div className="card card-compact w-96 bg-base-100 shadow-xl mt-6">
+        <div>
+          <div className="card card-compact w-96 bg-base-100 shadow-xl mt-6">
           <figure><img src={image} className='w-3/4 max-h-44' alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title font-bold">{title}</h2>
@@ -21,7 +22,7 @@ const ServiceCard = ({service}) => {
                 {
                   details.length > 100 ? 
                   <>
-                  {details.slice(0, 100) + '...'} <button onClick={()=>detailsHenal(_id)} className='btn btn-outline btn-primary btn-sm'><Link to={`/services/${_id}`}><span>Show details</span></Link></button>
+                  {details.slice(0, 100) + '...'} <button  className='btn btn-outline btn-primary btn-sm'><Link to={`/services/${_id}`}><span>Show details</span></Link></button>
                   </>
                   : details
                 }
@@ -35,6 +36,7 @@ const ServiceCard = ({service}) => {
                 </button>
               </div>
           </div>
+        </div>
         </div>
     );
 };

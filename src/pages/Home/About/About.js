@@ -1,7 +1,9 @@
 import React from 'react';
 import authorImg from '../../../assets/images/Author pic.jpg'
+import useTitle from '../../../Hooks/UseTitle';
 
 const About = () => {
+    useTitle('E-Service90/About')
     return (
         <div className="hero mt-6 border-l-[8px] border-indigo-500">
             <div className="hero-content flex-col justify-around lg:flex-row">

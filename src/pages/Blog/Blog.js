@@ -3,8 +3,10 @@ import logo1 from '../../assets/images/sqlnosql.jpg';
 import logo2 from '../../assets/images/jwt.png';
 import logo3 from '../../assets/images/js vs node.jpg';
 import logo4 from '../../assets/images/nodejs.png';
+import useTitle from '../../Hooks/UseTitle';
 
 const Blog = () => {
+    useTitle('E-Service90/Blog')
     return (
         <div className='grid grid-cols-1 lg:grid-cols-1 gap-6 w-full '>
             <div className="card w-3/4 bg-base-100 shadow-xl mx-auto">
